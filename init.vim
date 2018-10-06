@@ -10,6 +10,9 @@ call plug#end()
 " config
 set encoding=UTF-8
 set laststatus=2
+set list
+set shiftwidth=2
+set expandtab
 
 " auto show NERDTree when vim is called without file
 "autocmd StdinReadPre * let s:std_in=1
