@@ -98,4 +98,3 @@ setopt nomenucomplete
 
 # My customisation
 source ~/.zsh_profile
-
