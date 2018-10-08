@@ -98,3 +98,9 @@ setopt nomenucomplete
 
 # My customisation
 source ~/.zsh_profile
+
+# vim: make fzf to respect gitignore
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
+# vim: eliminate wait when pressing ESC in vim
+KEYTIMEOUT=1
