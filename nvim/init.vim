@@ -5,14 +5,27 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'w0rp/ale'
 call plug#end()
 
-" config
+colorscheme sublimemonokai
+
+" default encoding
 set encoding=UTF-8
-set list
+
+" show line number
+set number
+
+" set default tab to 2 spaces
 set shiftwidth=2
 set expandtab
+
+" hide default mode display in status as it is already showing in lightline
 set noshowmode
+
+" enable mouse select mode
+set mouse+=a
 
 " auto show NERDTree when vim is called without file
 "autocmd StdinReadPre * let s:std_in=1
@@ -21,12 +34,7 @@ set noshowmode
 " auto close vim if NERDTree is the only window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" set 256 terminal color
-if !has('gui_running')
-  set t_Co=256
-endif
-
-" Fzf customisations
+" fzf config
 let g:fzf_layout = { 'down': '~30%' }
 let g:fzf_command_prefix = 'Fzf'
 
