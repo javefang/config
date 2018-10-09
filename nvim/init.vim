@@ -7,9 +7,12 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'w0rp/ale'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
-colorscheme sublimemonokai
+" set colorscheme
+set background=dark
+colorscheme gruvbox 
 
 " default encoding
 set encoding=UTF-8
