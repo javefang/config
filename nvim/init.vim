@@ -1,13 +1,15 @@
 call plug#begin()
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'w0rp/ale'
-Plug 'morhetz/gruvbox'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 " set colorscheme
@@ -28,7 +30,7 @@ set expandtab
 set noshowmode
 
 " enable mouse select mode
-set mouse+=a
+"set mouse+=a
 
 " auto show NERDTree when vim is called without file
 "autocmd StdinReadPre * let s:std_in=1
@@ -47,4 +49,5 @@ map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-t> :tabnew<CR>
 map <C-p> :FzfRg<CR>
-map <C-o> :FzfFiles<CR>
+map <C-f> :FzfFiles<CR>
+map <C-j> :FzfBuffers<CR>
