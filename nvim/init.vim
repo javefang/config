@@ -29,6 +29,9 @@ set expandtab
 " hide default mode display in status as it is already showing in lightline
 set noshowmode
 
+" make gitgutter update more promptly
+set updatetime=100
+
 " enable mouse select mode
 "set mouse+=a
 
