@@ -96,11 +96,16 @@ source $ZSH/oh-my-zsh.sh
 setopt noautomenu
 setopt nomenucomplete
 
+# ENV
+export TERM='screen-256color'
+
 # My customisation
 source ~/.zsh_profile
 
 # make vim fzf to respect gitignore
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
-# vim: eliminate wait when pressing ESC in vim
+# eliminate vim wait when pressing ESC in vim
 KEYTIMEOUT=1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

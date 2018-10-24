@@ -2,7 +2,7 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
@@ -11,6 +11,10 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 call plug#end()
+
+" neovim provider
+let g:python3_host_prog='/usr/local/bin/python3'
+let g:loaded_python_provider = 1
 
 " set colorscheme
 set background=dark
@@ -33,7 +37,7 @@ set noshowmode
 set updatetime=100
 
 " enable mouse select mode
-"set mouse+=a
+set mouse+=a
 
 " auto show NERDTree when vim is called without file
 "autocmd StdinReadPre * let s:std_in=1
