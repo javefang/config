@@ -15,6 +15,7 @@ call plug#end()
 " neovim provider
 let g:python3_host_prog='/usr/local/bin/python3'
 let g:loaded_python_provider = 1
+let g:loaded_ruby_provider = 1
 
 " set colorscheme
 set background=dark
@@ -56,5 +57,5 @@ map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-t> :tabnew<CR>
 map <C-p> :FzfRg<CR>
-map <C-f> :FzfFiles<CR>
-map <C-j> :FzfBuffers<CR>
+map <C-j> :FzfFiles<CR>
+map <C-f> :FzfBLines<CR>
