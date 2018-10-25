@@ -50,12 +50,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " fzf config
 let g:fzf_layout = { 'down': '~30%' }
 let g:fzf_command_prefix = 'Fzf'
+command! -bang -nargs=* FzfAg call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " shortcuts
 map <C-n> :NERDTreeToggle<CR>
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-t> :tabnew<CR>
-map <C-p> :FzfRg<CR>
-map <C-j> :FzfFiles<CR>
-map <C-f> :FzfBLines<CR>
+map <C-p> :FzfAg<CR>
+map <C-f> :FzfFiles<CR>
+map <C-j> :FzfBLines<CR>
