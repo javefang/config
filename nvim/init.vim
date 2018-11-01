@@ -5,8 +5,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+"Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
+Plug 'valloric/youcompleteme'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
