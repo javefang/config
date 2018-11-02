@@ -9,6 +9,8 @@ Plug 'tpope/vim-fugitive'
 "Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 Plug 'valloric/youcompleteme'
+Plug 'raimondi/delimitmate'
+Plug 'yggdroot/indentline'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -28,6 +30,9 @@ set encoding=UTF-8
 
 " show line number
 set number
+
+" always show sign column
+set signcolumn=yes
 
 " set default tab to 2 spaces
 set shiftwidth=2
@@ -53,6 +58,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:fzf_layout = { 'down': '~30%' }
 let g:fzf_command_prefix = 'Fzf'
 command! -bang -nargs=* FzfAg call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
+" youcompleteme
+set completeopt-=preview
 
 " shortcuts
 map <C-n> :NERDTreeToggle<CR>
