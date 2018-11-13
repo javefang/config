@@ -59,6 +59,8 @@ plugins=(
   docker
   git
   golang
+  yarn
+  vagrant
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -92,20 +94,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# My customisations below #
+
+# make sure tmux and vim generate the correct colour
+export TERM='screen-256color'
+
 # tmux
 setopt noautomenu
 setopt nomenucomplete
 
-# ENV
-export TERM='screen-256color'
-
-# My customisation
-source ~/.zsh_profile
-
 # make vim fzf to respect gitignore
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
-# eliminate vim wait when pressing ESC in vim
+# eliminate vim wait time when ESC is pressed
 KEYTIMEOUT=1
 
+# add fzf shortcuts
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# My local customisations
+source ~/.zsh_profile
+

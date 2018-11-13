@@ -2,11 +2,12 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
-"Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 Plug 'valloric/youcompleteme'
 Plug 'raimondi/delimitmate'
@@ -17,8 +18,8 @@ Plug 'mxw/vim-jsx'
 call plug#end()
 
 " neovim provider
+let g:python_host_prog='/usr/bin/python'
 let g:python3_host_prog='/usr/local/bin/python3'
-let g:loaded_python_provider = 1
 let g:loaded_ruby_provider = 1
 
 " set colorscheme
@@ -44,8 +45,11 @@ set noshowmode
 " make gitgutter update more promptly
 set updatetime=100
 
-" enable mouse select mode
-set mouse+=a
+" enable mouse on normal mode only
+set mouse=a
+
+" make clipboard work
+set clipboard=unnamed
 
 " auto show NERDTree when vim is called without file
 "autocmd StdinReadPre * let s:std_in=1
@@ -62,6 +66,9 @@ command! -bang -nargs=* FzfAg call fzf#vim#ag(<q-args>, {'options': '--delimiter
 " youcompleteme
 set completeopt-=preview
 
+" ale disable highlight
+let g:ale_set_highlights = 0
+
 " shortcuts
 map <C-n> :NERDTreeToggle<CR>
 map <C-l> :tabn<CR>
@@ -70,3 +77,4 @@ map <C-t> :tabnew<CR>
 map <C-p> :FzfAg<CR>
 map <C-f> :FzfFiles<CR>
 map <C-j> :FzfBLines<CR>
+nnoremap gd :YcmCompleter GoToDefinition<CR>
