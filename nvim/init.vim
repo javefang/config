@@ -65,6 +65,7 @@ command! -bang -nargs=* FzfAg call fzf#vim#ag(<q-args>, {'options': '--delimiter
 
 " youcompleteme
 set completeopt-=preview
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 
 " ale disable highlight
 let g:ale_set_highlights = 0
