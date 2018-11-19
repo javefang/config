@@ -79,3 +79,9 @@ map <C-p> :FzfAg<CR>
 map <C-f> :FzfFiles<CR>
 map <C-j> :FzfBLines<CR>
 nnoremap gd :YcmCompleter GoToDefinition<CR>
+
+" Ctrl + hjkl to move between panes
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
