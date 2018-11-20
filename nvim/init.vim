@@ -45,9 +45,6 @@ set noshowmode
 " make gitgutter update more promptly
 set updatetime=100
 
-" enable mouse on normal mode only
-set mouse=a
-
 " make clipboard work
 set clipboard=unnamed
 
