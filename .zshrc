@@ -111,9 +111,9 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # eliminate vim wait time when ESC is pressed
 KEYTIMEOUT=1
 
-# add fzf shortcuts
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # My local customisations
 source ~/.zsh_profile
+
+# add fzf shortcuts
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

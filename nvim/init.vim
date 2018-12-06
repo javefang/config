@@ -67,15 +67,18 @@ let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 " ale disable highlight
 let g:ale_set_highlights = 0
 
+" indentline disable conceal quotes in JSON files
+let g:indentLine_setConceal = 0
+
 " shortcuts
 map <C-n> :NERDTreeToggle<CR>
-map <C-l> :tabn<CR>
-map <C-h> :tabp<CR>
 map <C-t> :tabnew<CR>
 map <C-p> :FzfAg<CR>
 map <C-f> :FzfFiles<CR>
 map <C-j> :FzfBLines<CR>
 nnoremap gd :YcmCompleter GoToDefinition<CR>
+nnoremap gnt :tabn<CR>
+nnoremap gpt :tabp<CR>
 
 " Ctrl + hjkl to move between panes
 nnoremap <C-h> <C-w><C-h>
