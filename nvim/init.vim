@@ -51,7 +51,6 @@ set noshowmode
 set updatetime=100
 
 " make clipboard work
-" (make sure iterm2 has all options under 'general' - 'selection' turned off)
 set clipboard=unnamed
 
 " auto show NERDTree when vim is called without file
