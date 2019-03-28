@@ -16,3 +16,5 @@
 	dlc= diff --cached HEAD^
 	type = cat-file -t
 	dump = cat-file -p
+[core]
+	quotepath = false

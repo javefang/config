@@ -16,6 +16,7 @@ Plug 'yggdroot/indentline'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'jamessan/vim-gnupg'
 call plug#end()
 
 " neovim provider
@@ -26,6 +27,9 @@ let g:loaded_ruby_provider = 1
 " set colorscheme
 set background=dark
 colorscheme gruvbox 
+
+" keep background transparent
+hi Normal guibg=NONE ctermbg=NONE
 
 " default encoding
 set encoding=UTF-8
@@ -47,6 +51,7 @@ set noshowmode
 set updatetime=100
 
 " make clipboard work
+" (make sure iterm2 has all options under 'general' - 'selection' turned off)
 set clipboard=unnamed
 
 " auto show NERDTree when vim is called without file
