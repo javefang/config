@@ -56,13 +56,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  docker
   kubectl
   git
-  golang
-  yarn
-  vagrant
-  awscli
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,9 +96,10 @@ source $ZSH/oh-my-zsh.sh
 # make sure tmux and vim generate the correct colour
 export TERM='screen-256color'
 
-# tmux
+# less zsh magic
 setopt noautomenu
 setopt nomenucomplete
+unsetopt auto_cd
 
 # make vim fzf to respect gitignore
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
