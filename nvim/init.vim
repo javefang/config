@@ -79,8 +79,8 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-t> :tabnew<CR>
 map <C-p> :Ag<CR>
 map <C-f> :Files<CR>
-map <C-tab> :tabn<CR>
-map <C-S-tab> :tabp<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprevious<CR>
 nnoremap gd :YcmCompleter GoToDefinition<CR>
 
 " Ctrl + hjkl to move between panes
