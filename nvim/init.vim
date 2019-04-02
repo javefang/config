@@ -62,8 +62,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " fzf config
 let g:fzf_layout = { 'down': '~30%' }
-let g:fzf_command_prefix = 'Fzf'
-command! -bang -nargs=* FzfAg call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " youcompleteme
 set completeopt-=preview
@@ -78,12 +77,11 @@ let g:indentLine_setConceal = 0
 " shortcuts
 map <C-n> :NERDTreeToggle<CR>
 map <C-t> :tabnew<CR>
-map <C-p> :FzfAg<CR>
-map <C-f> :FzfFiles<CR>
-map <C-j> :FzfBLines<CR>
+map <C-p> :Ag<CR>
+map <C-f> :Files<CR>
+map <C-tab> :tabn<CR>
+map <C-S-tab> :tabp<CR>
 nnoremap gd :YcmCompleter GoToDefinition<CR>
-nnoremap gnt :tabn<CR>
-nnoremap gpt :tabp<CR>
 
 " Ctrl + hjkl to move between panes
 nnoremap <C-h> <C-w><C-h>
