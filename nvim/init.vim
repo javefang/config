@@ -62,6 +62,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " fzf config
 let g:fzf_layout = { 'down': '~30%' }
+
+" fzf ignore filename when full text searching
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " youcompleteme
