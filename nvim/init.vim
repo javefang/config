@@ -2,7 +2,6 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -71,8 +70,11 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : 
 set completeopt-=preview
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 
-" ale disable highlight
+" ale
 let g:ale_set_highlights = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters_explicit = 1
+let g:ale_linters = {'javascript': ['eslint'], 'jsx': ['eslint']}
 
 " indentline disable conceal quotes in JSON files
 let g:indentLine_setConceal = 0
