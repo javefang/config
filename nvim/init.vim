@@ -53,6 +53,9 @@ set updatetime=100
 " make clipboard work
 set clipboard=unnamed
 
+" clear highlight on esc
+nnoremap <esc> :noh<return><esc>
+
 " auto show NERDTree when vim is called without file
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
