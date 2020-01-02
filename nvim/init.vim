@@ -1,18 +1,28 @@
 call plug#begin()
+" theme
 Plug 'morhetz/gruvbox'
+
+" ui
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'
+
+" file management
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
+
+" editing enhancement
+Plug 'dense-analysis/ale'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
+Plug 'yggdroot/indentline'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
-Plug 'w0rp/ale'
-Plug 'valloric/youcompleteme'
-Plug 'raimondi/delimitmate'
-Plug 'yggdroot/indentline'
+
+" language support
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -69,15 +79,39 @@ let g:fzf_layout = { 'down': '~30%' }
 " fzf ignore filename when full text searching
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
+" supertab
+let g:SuperTabDefaultCompletionType = "context"
+
 " youcompleteme
-set completeopt-=preview
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+" set completeopt-=preview
+" let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+
+" vim-go
+let g:go_code_completion_enabled = 1
+let g:go_fmt_command = "goimports"
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_auto_type_info = 1
+let g:go_addtags_transform = "snakecase"
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " ale
-let g:ale_set_highlights = 0
+let g:ale_open_list = 1
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_linters_explicit = 1
-let g:ale_linters = {'javascript': ['eslint'], 'jsx': ['eslint']}
+let g:ale_lint_on_enter = 0
+let g:ale_virtualenv_dir_names = []
+let g:ale_python_black_options = '-l 120'
+let g:ale_linters = {
+\  'python': ['flake8'],
+\  'go': ['gobuild', 'golangci-lint'],
+\}
+let g:ale_fixers = {
+\  'python': ['black'],
+\  'go': ['goimports'],
+\}
 
 " indentline disable conceal quotes in JSON files
 let g:indentLine_setConceal = 0
@@ -87,12 +121,8 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-t> :tabnew<CR>
 map <C-p> :Ag<CR>
 map <C-f> :Files<CR>
-nnoremap tj :tabnext<CR>
-nnoremap tk :tabprevious<CR>
-nnoremap gd :YcmCompleter GoToDefinition<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
-" Ctrl + hjkl to move between panes
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
