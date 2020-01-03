@@ -3,7 +3,8 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 
 " ui
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " file management
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -82,15 +83,11 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : 
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
 
-" youcompleteme
-" set completeopt-=preview
-" let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
-
 " vim-go
 let g:go_code_completion_enabled = 1
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 0
 let g:go_auto_type_info = 1
 let g:go_addtags_transform = "snakecase"
 
@@ -114,7 +111,12 @@ let g:ale_fixers = {
 \}
 
 " indentline disable conceal quotes in JSON files
-let g:indentLine_setConceal = 0
+" let g:indentLine_setConceal = 0
+
+" airline
+let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#enabled = 0
 
 " shortcuts
 map <C-n> :NERDTreeToggle<CR>
