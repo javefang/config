@@ -56,8 +56,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  kubectl
+  # kubectl
   git
+  ssh-agent
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,9 +108,8 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # eliminate vim wait time when ESC is pressed
 KEYTIMEOUT=1
 
-# My local customisations
-source ~/.zsh_profile
-
 # add fzf shortcuts
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# pyenv
+eval "$(pyenv init -)"

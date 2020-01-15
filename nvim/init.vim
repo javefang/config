@@ -25,8 +25,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'davidhalter/jedi-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'jamessan/vim-gnupg'
 call plug#end()
 
@@ -95,8 +96,12 @@ let g:go_addtags_transform = "snakecase"
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
+" jedi
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#completions_enabled = 0  " handled by deoplete-jedi
+
 " ale
-let g:ale_open_list = 1
+let g:ale_open_list = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_virtualenv_dir_names = []
@@ -111,7 +116,7 @@ let g:ale_fixers = {
 \}
 
 " indentline disable conceal quotes in JSON files
-" let g:indentLine_setConceal = 0
+let g:indentLine_setConceal = 0
 
 " airline
 let g:airline_theme='powerlineish'
@@ -123,6 +128,7 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-t> :tabnew<CR>
 map <C-p> :Ag<CR>
 map <C-f> :Files<CR>
+map <C-m> :ALEToggleBuffer<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
