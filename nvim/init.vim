@@ -3,8 +3,9 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 
 " ui
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 " file management
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -24,6 +25,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+Plug 'wokalski/autocomplete-flow'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'davidhalter/jedi-vim'
 Plug 'pangloss/vim-javascript'
@@ -98,7 +100,11 @@ call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " jedi
 let g:jedi#auto_vim_configuration = 0
+let g:jedi#show_call_signatures = 0
 let g:jedi#completions_enabled = 0  " handled by deoplete-jedi
+
+" javascript
+let g:javascript_plugin_flow = 1
 
 " ale
 let g:ale_open_list = 0
@@ -109,6 +115,7 @@ let g:ale_python_black_options = '-l 120'
 let g:ale_linters = {
 \  'python': ['flake8'],
 \  'go': ['gobuild', 'golangci-lint'],
+\  'javascript': ['eslint'],
 \}
 let g:ale_fixers = {
 \  'python': ['black'],
