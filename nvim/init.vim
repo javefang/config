@@ -24,8 +24,8 @@ Plug 'airblade/vim-gitgutter'
 " language support
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-Plug 'wokalski/autocomplete-flow'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
+" Plug 'wokalski/autocomplete-flow'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'davidhalter/jedi-vim'
 Plug 'pangloss/vim-javascript'
@@ -54,6 +54,9 @@ set number
 " always show sign column
 set signcolumn=yes
 
+" set 120-char line
+set colorcolumn=120
+
 " set default tab to 2 spaces
 set shiftwidth=2
 set expandtab
@@ -62,7 +65,7 @@ set expandtab
 set noshowmode
 
 " make gitgutter update more promptly
-set updatetime=100
+set updatetime=1000
 
 " make clipboard work
 set clipboard=unnamed
@@ -74,6 +77,9 @@ nnoremap <esc> :noh<return><esc>
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" nerdtree
+let g:NERDTreeWinSize=40
+
 " auto close vim if NERDTree is the only window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -82,6 +88,7 @@ let g:fzf_layout = { 'down': '~30%' }
 
 " fzf ignore filename when full text searching
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
@@ -133,7 +140,7 @@ let g:airline#extensions#whitespace#enabled = 0
 " shortcuts
 map <C-n> :NERDTreeToggle<CR>
 map <C-t> :tabnew<CR>
-map <C-p> :Ag<CR>
+map <C-p> :Rg<CR>
 map <C-f> :Files<CR>
 map <C-m> :ALEToggleBuffer<CR>
 nnoremap <C-J> <C-W><C-J>
