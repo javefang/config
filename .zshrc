@@ -56,7 +56,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  # kubectl
+  kubectl
   git
   ssh-agent
 )
@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # My customisations below #
 
 # make sure tmux and vim generate the correct colour
-export TERM='screen-256color'
+export TERM='xterm-256color'
 
 # less zsh magic
 setopt noautomenu

@@ -17,7 +17,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 Plug 'yggdroot/indentline'
 Plug 'ervandew/supertab'
-Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 
 " language support
@@ -27,6 +26,7 @@ Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 Plug 'davidhalter/jedi-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'fatih/vim-go'
 Plug 'jamessan/vim-gnupg'
 call plug#end()
 
@@ -60,6 +60,9 @@ set expandtab
 
 " hide default mode display in status as it is already showing in lightline
 set noshowmode
+
+" speed up redraw
+set lazyredraw
 
 " make gitgutter update more promptly
 set updatetime=1000
@@ -109,6 +112,9 @@ let g:jedi#completions_enabled = 0  " handled by deoplete-jedi
 
 " javascript
 let g:javascript_plugin_flow = 1
+
+" disable completion in vim-go (using deoplete-go)
+let g:go_code_completion_enabled = 0
 
 " ale
 let g:ale_open_list = 0
