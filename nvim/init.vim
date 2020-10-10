@@ -63,6 +63,7 @@ set noshowmode
 
 " speed up redraw
 set lazyredraw
+set ttyfast
 
 " make gitgutter update more promptly
 set updatetime=1000
